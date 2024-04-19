@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Test Questions</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="c_institute_logo.png" alt="C Institute Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Back to Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="questions">
+        <h2>English Test Questions</h2>
+        <p>Answer the following questions in less than 5 minutes:</p>
+        <div class="question">
+            <h3>What is the past tense of "go"?</h3>
+            <form>
+                <input type="radio" name="question1" value="A"> A) Went<br>
+                <input type="radio" name="question1" value="B"> B) Gone<br>
+                <input type="radio" name="question1" value="C"> C) Goes<br>
+                <input type="radio" name="question1" value="D"> D) Going<br>
+            </form>
+        </div>
+        <div class="question">
+            <h3>Which word means the opposite of "hot"?</h3>
+            <form>
+                <input type="radio" name="question2" value="A"> A) Cold<br>
+                <input type="radio" name="question2" value="B"> B) Warm<br>
+                <input type="radio" name="question2" value="C"> C) Cool<br>
+                <input type="radio" name="question2" value="D"> D) Boiling<br>
+            </form>
+        </div>
+        <div class="question">
+            <h3>Choose the correct form of the verb to complete the sentence: "She ____ to the store every day."</h3>
+            <form>
+                <input type="radio" name="question3" value="A"> A) Goes<br>
+                <input type="radio" name="question3" value="B"> B) Going<br>
+                <input type="radio" name="question3" value="C"> C) Go<br>
+                <input type="radio" name="question3" value="D"> D) Gone<br>
+            </form>
+        </div>
+        <div class="question">
+            <h3>What is the plural form of "child"?</h3>
+            <form>
+                <input type="radio" name="question4" value="A"> A) Childs<br>
+                <input type="radio" name="question4" value="B"> B) Childes<br>
+                <input type="radio" name="question4" value="C"> C) Children<br>
+                <input type="radio" name="question4" value="D"> D) Childs'<br>
+            </form>
+        </div>
+        <div class="question">
+            <h3>Which of these words is a synonym for "happy"?</h3>
+            <form>
+                <input type="radio" name="question5" value="A"> A) Sad<br>
+                <input type="radio" name="question5" value="B"> B) Angry<br>
+                <input type="radio" name="question5" value="C"> C) Joyful<br>
+                <input type="radio" name="question5" value="D"> D) Upset<br>
+            </form>
+        </div>
+        <button onclick="submitTest()">Submit</button>
+        <p id="result"></p>
+    </section>
+
+    <script>
+        function submitTest() {
+            const answers = {
+                question1: document.querySelector('input[name="question1"]:checked').value,
+                question2: document.querySelector('input[name="question2"]:checked').value,
+                question3: document.querySelector('input[name="question3"]:checked').value,
+                question4: document.querySelector('input[name="question4"]:checked').value,
+                question5: document.querySelector('input[name="question5"]:checked').value
+            };
+
+            let correctAnswers = 0;
+
+            // Check correct answers
+            if (answers.question1 === 'A') correctAnswers++;
+            if (answers.question2 === 'A') correctAnswers++;
+            if (answers.question3 === 'A') correctAnswers++;
+            if (answers.question4 === 'C') correctAnswers++;
+            if (answers.question5 === 'C') correctAnswers++;
+
+            let level = '';
+
+            // Determine English level based on correct answers
+            if (correctAnswers === 5) {
+                level = 'C2 - Proficient';
+            } else if (correctAnswers >= 3) {
+                level = 'B1/B2 - Intermediate';
+            } else {
+                level = 'A1/A2 - Beginner';
+            }
+
+            // Display result
+            document.getElementById('result').innerText = `Your English level: ${level}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+/* Resetting default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #ffffff;
+    padding: 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 20%; /* Adjust according to your logo size */
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 2%;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.home {
+    text-align: center;
+    padding: 5% 0;
+}
+
+.cta {
+    margin-bottom: 2%;
+}
+
+.btn {
+    display: inline-block;
+    padding: 2% 5%;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #555;
+}
+
+.suggestions {
+    text-align: center;
+    padding: 2% 0;
+}
+
+.suggestions h2 {
+    margin-bottom: 2%;
+}
+
+.suggestion {
+    display: inline-block;
+    margin-right: 2%;
+}
+
+.suggestion img {
+    width: 20%; /* Adjust according to your image size */
+    border-radius: 50%;
+}
+
+.contact {
+    background-color: #ffffff;
+    padding: 5%;
+    text-align: center;
+}
+
+.contact h2 {
+    margin-bottom: 2%;
+}
+
+.contact p {
+    margin-bottom: 1%;
+}
+
+.gallery {
+    margin-top: 2%;
+}
+
+.gallery img {
+    width: 20%; /* Adjust according to your image size */
+    margin-right: 1%;
+    border-radius: 5px;
+}
