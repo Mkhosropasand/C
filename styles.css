@@ -102,3 +102,105 @@ nav ul li a {
     margin-right: 1%;
     border-radius: 5px;
 }
+/* Your existing CSS code goes here */
+
+/* Add the interactive circles CSS below your existing code */
+
+.interactive-circles {
+    position: fixed;
+    left: 20px; /* Adjust the position as needed */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.central-circle {
+    width: 50px; /* Smaller size */
+    height: 50px; /* Smaller size */
+    background-color: orange; /* Changed to orange */
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.surrounding-circles {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+}
+
+.circle {
+    width: 30px; /* Adjusted size */
+    height: 30px; /* Adjusted size */
+    border-radius: 50%;
+    position: absolute;
+}
+
+/* Positioning for 10 surrounding circles */
+.circle:nth-child(1) {
+    top: calc(-50px - 90px * cos(36deg));
+    left: calc(-50px + 90px * sin(36deg));
+    background-color: red;
+}
+
+.circle:nth-child(2) {
+    top: calc(-50px - 90px * cos(72deg));
+    left: calc(-50px + 90px * sin(72deg));
+    background-color: green;
+}
+
+.circle:nth-child(3) {
+    top: -50px;
+    left: 90px;
+    background-color: red;
+}
+
+.circle:nth-child(4) {
+    top: calc(-50px - 90px * cos(72deg));
+    left: calc(-50px - 90px * sin(72deg));
+    background-color: green;
+}
+
+.circle:nth-child(5) {
+    top: calc(-50px - 90px * cos(36deg));
+    left: calc(-50px - 90px * sin(36deg));
+    background-color: red;
+}
+
+.circle:nth-child(6) {
+    top: calc(-50px + 90px * cos(36deg));
+    left: calc(-50px - 90px * sin(36deg));
+    background-color: green;
+}
+
+.circle:nth-child(7) {
+    top: 90px;
+    left: calc(-50px + 90px * sin(72deg));
+    background-color: red;
+}
+
+.circle:nth-child(8) {
+    top: calc(-50px + 90px * cos(72deg));
+    left: calc(-50px + 90px * sin(72deg));
+    background-color: green;
+}
+
+.circle:nth-child(9) {
+    top: 90px;
+    left: calc(-50px - 90px * sin(72deg));
+    background-color: red;
+}
+
+.circle:nth-child(10) {
+    top: calc(-50px + 90px * cos(72deg));
+    left: calc(-50px - 90px * sin(72deg));
+    background-color: green;
+}
+
+.interactive-circles:hover .central-circle {
+    transform: scale(1.2); /* Smaller scale */
+}
+
+.interactive-circles:hover .surrounding-circles {
+    visibility: visible;
+}
